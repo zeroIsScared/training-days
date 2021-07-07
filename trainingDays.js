@@ -1,8 +1,8 @@
 // The scope of `random` is too loose 
-
+const random = Math.floor(Math.random() * 3);
 
 const getRandEvent = () => {
-    const random = Math.floor(Math.random() * 3);
+    
 
   if (random === 0) {
     return 'Marathon';
@@ -49,36 +49,9 @@ logEvent(name, event);
 logTime(name, days);
 
 
-// The scope of `random` is too loose 
-// The scope of `days` is too tight 
-const getTrainingDays2 = event2 => {
- let days2;
-  if (event2 === 'Marathon') {
-    days2 = 50;
-  } else if (event2 === 'Triathlon') {
-    days2 = 100;
-  } else if (event2 === 'Pentathlon') {
-    days2 = 200;
-  }
- 
-  return days2;
-};
- 
-// The scope of `name` is too tight 
-
-const logEvent2 = (name2, event2) => {
-  
-  console.log(`${name2}'s event is: ${event2}`);
-};
- 
-const logTime2 = (name2, days2) => {
-  
-  console.log(`${name2}'s time to train is: ${days2} days`);
-};
-
 const event2 = getRandEvent();
-const days2= getTrainingDays2(event2);
+const days2= getTrainingDays(event2);
 const name2 = 'Warren';
 
-logEvent2(name2, event2);
-logTime2(name2, days2);
+logEvent(name2, event2);
+logTime(name2, days2);
